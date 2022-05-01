@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #222;
+}
+
+.header {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 628px;
+  background-image: url(./images/cover.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title-box {
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.title-main {
+  position: relative;
+  letter-spacing: 10px;
+  margin-right: -10px;
+  z-index: 1;
+}
+
+.title-main::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: -7px 0 0 -10px;
+  height: 6px;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-top: 130px;
+  width: 4px;
+  background-color: dodgerblue;
+  transform: translateX(-50%);
+}
+
+.card {
+  position: relative;
+  max-width: 560px;
+  padding: 44px 30px 0;
+  border-radius: 20px;
+  background-color: #111;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #111;
+}
+
+.card-img {
+  position: absolute;
+  width: 115px;
+}
+
+.card-year {
+  font-size: 64px;
+  color: dodgerblue;
+}
+
+.card-name::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid dodgerblue;
+  border-radius: 50%;
+  background-color: #222;
+}
+
+.card-name {
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.card ul {
+  padding: 34px 33px;
+  border-radius: 20px 20px 0 0;
+  background-color: #000;
+  color: #4a4a4a;
+}
+
+.card ul li {
+  margin-left: 20px;
+}
+
+.card ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* 홀수 번째 */
+
+.card:nth-child(odd) {
+  margin-right: 53%;
+}
+
+.card:nth-child(odd) .card-img {
+  top: 0;
+  left: 0;
+  margin: -60px 0 0 20px;
+}
+
+.card:nth-child(odd) .card-year {
+  text-align: right;
+}
+
+.card:nth-child(odd) .card-name {
+  text-align: right;
+}
+
+.card:nth-child(odd)::after {
+  top: 50%;
+  right: 0;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.card:nth-child(odd) .card-name::after {
+  top: 50%;
+  right: -8.7%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* 짝수 번째 */
+
+.card:nth-child(even) {
+  margin-left: 53%;
+}
+
+.card:nth-child(even) .card-img {
+  top: 0;
+  right: 0;
+  margin: -60px 20px 0 0;
+}
+
+.card:nth-child(even) .card-year {
+  text-align: left;
+}
+
+.card:nth-child(even) .card-name {
+  text-align: left;
+}
+
+.card:nth-child(even)::after {
+  top: 50%;
+  left: 0;
+  transform: rotate(45deg) translateX(-50%);
+}
+
+.card:nth-child(even) .card-name::after {
+  top: 50%;
+  left: -8.7%;
+  transform: translateY(-50%);
+  z-index: 1;
+}

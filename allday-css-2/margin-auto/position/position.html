@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position Mini Example</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: #666;
+        /* body에 relative를 주면 내부 자식요소의 크기만 가지기 때문에 뷰포트 전체보다 작다. */
+        /* position: relative; */
+      }
+      .grand-father {
+        background-color: #bbb;
+        width: 800px;
+        margin: 0 auto;
+        padding: 1px;
+        position: relative;
+      }
+      .father {
+        background-color: white;
+        width: 300px;
+        height: 200px;
+        margin: 50px auto;
+        /* position: relative; */
+      }
+      .children {
+        width: 100px;
+        height: 100px;
+        /* absolute의 초기 기준은 뷰포트 기준 */
+        /* 자식요소의 absolute 기준은 모든 부모(조상포함)를 기준으로 한다. */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .pos {
+        background-color: orange;
+        position: absolute;
+        /* left:0, right:0을 동시에 적용하면 컨테이닝 블록의 넓이에 맞춰 가득 차게 된다. */
+
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        /* inset:0은 left/right/top/bottom의 단축속성으로 모든 방향 속성의 0과 같다. 다만 IE에서 지원하지 않아 브라우저 호환성에서 문제가 있다. */
+
+        width: 100px;
+        height: 100px;
+        margin: auto;
+      }
+
+      /* 인라인 요소에 absolute를 사용하면 normal-flow에서 벗어나기 때문에 block level 요소가 된다. 그렇다면 float도 마찬가지! */
+      .inline {
+        position: absolute;
+        background-color: aquamarine;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grand-father">
+      <div class="father">
+        <img class="children" src="img.png" />
+        <div class="pos">POS</div>
+      </div>
+      <span class="inline">span</span>
+    </div>
+  </body>
+</html>

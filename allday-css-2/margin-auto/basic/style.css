@@ -1,0 +1,48 @@
+/* 포인트 : 컨테이닝 블록 기준을 잘 알아야함 */
+/* https://developer.mozilla.org/ko/docs/Web/CSS/Containing_block  */
+
+.timeline {
+  width: 800px;
+  margin: 100px auto;
+  border: 1px solid red;
+  position: relative;
+}
+
+.timeline::after {
+  content: "";
+  background-color: dodgerblue;
+  width: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* 음수 값으로 영역 밖으로도 나갈 수 있다. */
+  /* 상하 속성이 height 설정보다 좋은 점은 margin 또한 계산이 가능해서 유동적이다. */
+  margin: 20px auto;
+  transform: translateX(-50%);
+}
+
+.item {
+  padding: 40px;
+  /* auto값은 직계부모(부모의 컨테이닝 블럭)의 넓이, 마진, 패딩과 보더값을 계산해서 너비를 가득 채운다.  */
+  /* %값은 auto와 부모의 넓이에 따라 결정되는 점에서 비슷하지만 고정값인 수치를 직접 정할 수 있다. 마진을 사용할 경우 마진/패딩/보더를 계산하지 않고 밀어낸다 */
+  /* width: auto; */
+  /* 자식요소의 높이(콘텐츠) */
+  height: auto;
+  background-color: orange;
+  /* box-sizing: border-box; */
+  /* 
+  박스 사이징을 사용하지 못할 때 사용할 수 있는 방법
+  1. 부모 요소 width:50%, 자식요소 width:auto;
+  2. width:auto 상태에서 margin-left, margin-right:50% 적용
+  */
+}
+
+.item:nth-child(odd) {
+  margin-right: 55%;
+}
+
+.item:nth-child(even) {
+  margin-left: 50%;
+}

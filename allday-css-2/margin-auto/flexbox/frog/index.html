@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexing</title>
+    <style>
+      body {
+        background-color: brown;
+      }
+      .playground {
+        display: flex;
+        border: 10px solid maroon;
+        width: 980px;
+        margin: 0 auto;
+        border-radius: 30px;
+        background-color: skyblue;
+      }
+      .frog {
+        background-color: mediumseagreen;
+        color: lime;
+        font-size: 40px;
+        border: 6px solid green;
+        border-radius: 10px;
+      }
+
+      .frog.disco {
+        /* '사용가능 공간'을 여백으로 취하는 margin:auto */
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="playground">
+      <div class="frog"><img src="./images/frog-3d.png" /></div>
+      <div class="frog"><img src="./images/frog-cry.png" /></div>
+      <div class="frog disco"><img src="./images/frog-disco.png" /></div>
+    </div>
+  </body>
+</html>
