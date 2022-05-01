@@ -208,7 +208,7 @@ body {
     height: auto;
     background-image: linear-gradient(
         to top,
-        rgba(0, 0, 0, 1) 70%,
+        rgba(0, 0, 0, 1) 75%,
         rgba(0, 0, 0, 0)
       ),
       url(./images/cover.png);
