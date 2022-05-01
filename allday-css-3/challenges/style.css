@@ -197,10 +197,12 @@ body {
 /* responsive */
 
 @media screen and (max-width: 700px) {
+  body {
+    padding: 0 20px;
+  }
   .wrapper {
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-end;
     gap: 50px;
     padding: 250px 18px 20px;
     height: auto;
