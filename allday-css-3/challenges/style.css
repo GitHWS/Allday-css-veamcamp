@@ -204,11 +204,11 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     gap: 50px;
-    padding: 250px 18px 20px;
+    padding: 195px 18px 20px;
     height: auto;
     background-image: linear-gradient(
         to top,
-        rgba(0, 0, 0, 1) 75%,
+        rgba(0, 0, 0, 1) 77%,
         rgba(0, 0, 0, 0)
       ),
       url(./images/cover.png);
